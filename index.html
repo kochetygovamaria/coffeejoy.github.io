@@ -20,7 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/js/mdb.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,900' rel='stylesheet' type='text/css'>
-     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     
       
           <link rel="stylesheet" href="css/style.css">
@@ -33,16 +33,75 @@ button{
 a{
     font-family: Archivo Narrow;
 }
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
 
+    z-index: 9999;
+    background: url('144.gif') 50% 50% no-repeat rgb(255,255,255);
+    opacity: .8;
+}
+.m-fadeOut {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+}
+.m-fadeIn {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
+}
     </style>
+    <script type="text/javascript">
+        $(window).load(function() {
+            setTimeout(function() {
+    $(".loader").fadeOut("slow");
+}, 2000);
+});
+        function ShowDiv() {
+            document.getElementById('div1').className='m-fadeIn';
+            
+        }
+        $(document).ready(function(){
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+          
+              // Make sure this.hash has a value before overriding default behavior
+              if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+          
+                // Store hash
+                var hash = this.hash;
+          
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                  scrollTop: $(hash).offset().top
+                }, 800, function(){
+             
+                  // Add hash (#) to URL when done scrolling (default click behavior)
+                  window.location.hash = hash;
+                });
+              } // End if
+            });
+               // Add smooth scrolling to all links
+         
+          });
+ 
+        </script>
 </head>
 
-<body >
-        
-            <!--Main Navigation-->
+<body onload="window.setInterval('ShowDiv()', 1000);">
+        <div class="loader"></div>
+        <div id="div1" class="m-fadeOut">
+         
             <header >
             
-                    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+                    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
                             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                               <span class="navbar-toggler-icon"></span>
                             </button>
@@ -52,28 +111,32 @@ a{
                                  
                               <ul class="navbar-nav ml-auto ">
                                 <li class="nav-item active">
-                                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                  <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#menu">Menu</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Menu</a>
-                                </li>
+                                        <a class="nav-link" href="#about">About</a>
+                                      </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Contact</a>
+                                  <a class="nav-link" href="#contact">Contact</a>
                                 </li>
                                
                               </ul>
                              
                             </div>
                           </nav>
-                          <div style="background:url('21.jpg') no-repeat center center; 
+                          <div id="home" style="background:url('21.jpg') no-repeat center center; 
                           -webkit-background-size: cover;
                           -moz-background-size: cover;
                           -o-background-size: cover;
-                          background-size: cover;height:95vh;">
+                          background-size: cover;height:100vh;">
                          
                             
                         
-                          <div class="registration-form" style="float:right;margin-top:20%;margin-right:10%;">
+                          <div class="registration-form" style="float:right;margin-top:20%;margin-right:15%;">
                                 <header>
                                   <h1>Get a Free Cup of Coffee</h1>
                                   <p>Subscribe</p>
@@ -99,50 +162,56 @@ a{
 
                         
 
-<div style="background-color:#212121;height:95vh;width:35vw; margin-left:3%;">
+<div style="background-color:#212121;height:80vh;width:35vw; margin-left:3%;">
        
-    <h2 style="padding-top:50%;color:white;text-align:center; font-family:Playfair Display;">Our Grand Opening</h2>
+    <h2 style="padding-top:40%;color:white;text-align:center; font-family:Playfair Display;">Our Grand Opening</h2>
 </br>
     <h1 style="color:white;text-align:center; font-family:Playfair Display;">&amp;</h1>
 </br>
     <h2 style="color:white;text-align:center; font-family:Playfair Display;">Coffee Tasitng</h2>
 </br>
-<h2 style="color:white;text-align:center; font-family:Playfair Display;">Dec 12, 2017</h2>
+<h2 style="color:white;text-align:center; font-family:Playfair Display;">Dec 12, 2017</h2></br>
+<h5 style="color:white;text-align:center; font-family:Playfair Display;"> 56 Beacon Street, Brookline, MA</h5>
 </div>
 </div> 
-<button href="#" class="btn btn-outlined btn-theme btn-lg" data-wow-delay="0.7s">Menu</button>          
+<a href="#menu"><button class="btn btn-outlined btn-theme btn-lg" data-wow-delay="0.7s">Menu</button></a>       
             </header>
             <!--Main Navigation-->
             
             <!--Main Layout-->
             <main class="text-center py-5">
-                <h1 style="color:#faca56">Menu</h1>
-                    <div class="container" style="border-top:1ch solid #faca56">
+                <h1 style="color:#faca56;font-family:Chela One;">Menu</h1>
+                    <div class="container"  id="menu" style="border-top:1ch solid #faca56">
                             <div class="container" style="border-top:0.5ch solid #faca56; margin-top:1%;">
                             <div class="row" style="margin-top:1%;">
-                              <div class="col">
+                              <div class="col" style="margin-top:5%;">
                                     <img src="Asset9.png" class="img-fluid" alt="Responsive image" style="width:25%;">
-                                    <h3 style="margin-top:5%;">Dessert</h3>
+                                    <h3 style="margin-top:5%; font-family:Myriad Pro;color:#93768d;"><em>Dessert Menu</em></h3>
+                                    <h4 style="margin-top:5%;font-family:Myriad Pro;color:#f2b206;">Try our special </br>pie - Sunshine</h4>
                               </div>
-                              <div class="col">
+                              <div class="col" style="margin-top:5%;">
                                     <img src="Asset10.png" class="img-fluid" alt="Responsive image" style="width:25%; margin-top:10%;">
-                                    <h3 style="margin-top:5%;">Coffee</h3>
+                                    <h3 style="margin-top:5%; font-family:Myriad Pro;color:#93768d;"><em>Coffee Menu</em></h3>
+                                    <h4 style="margin-top:5%;font-family:Myriad Pro;color:#f2b206;">Try our special</br>
+                                            drink - Coffee Joy</h4>
+
                               </div>
-                              <div class="col">
+                              <div class="col" style="margin-top:5%;">
                                     <img src="Asset11.png" class="img-fluid" alt="Responsive image" style="width:25%;">
-                                    <h3 style="margin-top:5%;">Tea</h3>
+                                    <h3 style="margin-top:5%; font-family:Myriad Pro;color:#93768d;"><em>Tea Menu</em></h3>
+                                    <h4 style="margin-top:5%;font-family:Myriad Pro; color:#f2b206;">Try our special</br> tea blend - Joy</h4>
                               </div>
                             </div>
                           </div>
             </div>
             <div class="container" style="margin-top:10%;">
-            <h2 style="color:#faca56" >About</h2>
-            <div class="container" style="border-top:1ch solid #faca56">
+            <h2 style="color:#faca56;font-family:Chela One;" >About</h2>
+            <div class="container" id="about" style="border-top:1ch solid #faca56">
                     <div class="container" style="border-top:0.5ch solid #faca56; margin-top:1%;">
                     <div class="row" style="margin-top:3%;">
                       <div class="col">
-                         <blockquote class="blockquote" style="margin-top:30%;"><em>A big thank you again for the cake, my little girl loved it and so did all her friends.
-                                Lorraine Van De Lubbe</em></blockquote>   
+                         <blockquote class="blockquote" style="margin-top:30%;font-family:Myriad Pro;color:#93768d;" ><em>A big thank you again for the cake, my little girl loved it and so did all her friends.</em>
+                               <strong style="color:#f2b206;">Lorraine Van De Lubbe</strong></blockquote>   
                       </div>
                       <div class="col">
                             <img src="imagID.png" class="img-fluid" alt="Responsive image" >
@@ -150,16 +219,30 @@ a{
                       </div>
                      
                     </div>
+                    <div class="row" style="margin-top:3%;">
+                            <div class="col">
+                               <h4 style="color:#faca56;">We are ...</h4>
+                                    <p style="font-family:Myriad Pro;color:#93768d; text-align: left;"> 
+                                            We a family business since 1989.  We treat our customers as a family memebers and want to make them happy.</p> 
+                            </div>
+                            <div class="col">
+                                    <h4 style="color:#faca56;">Our Mission</h4>
+                                    <p style="font-family:Myriad Pro;color:#93768d; text-align: left;">
+                                            We love our community and we want to  bring a little bit joy in every day of our life. </p>
+                                  
+                            </div>
+                           
+                          </div>
                   </div>
                 </div>
     </div>
     <div class="container" style="margin-top:10%;">
-            <h2 style="color:#faca56" >What Our Friends Say About Us</h2>
+            <h2 style="color:#faca56; font-family:Chela One;"  >What Our Friends Say About Us</h2>
             <div class="container" style="border-top:1ch solid #faca56">
                     <div class="container" style="border-top:0.5ch solid #faca56; margin-top:1%;">
                     <div class="row" style="margin-top:3%;">
                       <div class="col">
-                         <blockquote class="blockquote" style="margin-top:30%;"><em>A big thank you again for the cake, my little girl loved it and so did all her friends.
+                         <blockquote class="blockquote" style="margin-top:30%;font-family:Myriad Pro;color:#93768d;"><em>A big thank you again for the cake, my little girl loved it and so did all her friends.
                                 Lorraine Van De Lubbe</em></blockquote>   
                       </div>
                       <div class="col">
@@ -170,27 +253,29 @@ a{
                     </div>
                     <div class="row" style="margin-top:5%;margin-bottom:5%;">
                             <div class="col">
-                                    “Best fruit cake I have ever tasted...Is it bad to just place an order even though I have nothing to celebrate? I just want to eat that cake again! Thank you!”
-                                    Amy &ampt;ampt; Mark Barwel
+                                   <p style="font-family:Myriad Pro; color:#93768d; text-align: left;"> “Best fruit cake I have ever tasted...Is it bad to just place an order even though I have nothing to celebrate? I just want to eat that cake again! Thank you!”
+                                    </p><p style="color:#f2b206;"> Amy &amp; Mark Barwel.</p>
                                     
                             </div>
                             <div class="col">
-                                    “Thanks ever so much for birthday party. Our guests  love the desert! The truffle favours were so original and they were also a real hit... So much so that someone nicked mine! Once again thank you.”
-                                    Amy &ampt;  Mark Barwel
+                                    <p style="font-family:Myriad Pro;color:#93768d;text-align: left;">  “Thanks ever so much for birthday party. Our guests  love the desert! The truffle favours were so original and they were also a real hit... So much so that someone nicked mine! Once again thank you.”
+                                        </p><p style="color:#f2b206;"> Amy &amp;  Mark Barwel</p>
                                 
                                   
                             </div>
                            
                           </div>
                           <div class="row" style="margin-top:1%;margin-bottom:5%;">
-                                <div class="col">
-                                        “Your  deserts were beautifully decorated, delicious and moist! And the drink was so Yammy. We had a great time at you coffee shop!  Thanks again.”
-                                        Amy &ampt; Mark Barwel
+                               
+                            <div class="col">
+
+                                        <p style="font-family:Myriad Pro;color:#93768d; text-align: left;">   “Your  deserts were beautifully decorated, delicious and moist! And the drink was so Yammy. We had a great time at you coffee shop!  Thanks again.”
+                                            </p><p style="color:#f2b206;">  Amy &amp; Mark Barwel</p>
                                         
                                 </div>
                                 <div class="col">
-                                        “Thank you for the cake. So impressed and that carrot & walnut cake is the most moist cake I have ever tasted. Thank you again – We will definitly come back!”
-                                        Amy &ampt; Mark Barwel
+                                        <p style="font-family:Myriad Pro;color:#93768d; text-align: left;">     “Thank you for the cake. So impressed and that carrot & walnut cake is the most moist cake I have ever tasted. Thank you again – We will definitly come back!”
+                                            </p><p style="color:#f2b206;">   Amy &amp; Mark Barwel</p>
                                         
                                         
                                       
@@ -200,14 +285,14 @@ a{
 
                               <div class="row" style="margin-top:1%; margin-bottom:5%;">
                                     <div class="col">
-                                            “Your  deserts were beautifully decorated, delicious and moist! And the drink was so Yammy. We had a great time at you coffee shop!  Thanks again.”
-                                            Amy &ampt; Mark Barwel
+                                            <p style="font-family:Myriad Pro;color:#93768d; text-align: left;">     “Your  deserts were beautifully decorated, delicious and moist! And the drink was so Yammy. We had a great time at you coffee shop!  Thanks again.”
+                                                </p><p style="color:#f2b206;">   Amy &amp; Mark Barwel</p>
                                             
                                             
                                     </div>
                                     <div class="col">
-                                            “Thanks ever so much for birthday party. Our guests  love the desert! The truffle favours were so original and they were also a real hit... So much so that someone nicked mine! Once again thank you.”
-                                            Amy &ampt; Mark Barwel
+                                            <p style="font-family:Myriad Pro;color:#93768d; text-align: left;">  “Thanks ever so much for birthday party. Our guests  love the desert! The truffle favours were so original and they were also a real hit... So much so that someone nicked mine! Once again thank you.”
+                                           </p><p style="color:#f2b206;"> Amy &amp; Mark Barwel</p>
                                             
                                             
                                             
@@ -229,7 +314,7 @@ a{
         
         <script type="text/javascript">( function(){ window.SIG_EXT = {}; } )()</script><div class="hiddendiv common"></div>
     
-        <footer class="footer"  style="background-color:#212121;">
+        <footer class="footer" id="contact"  style="background-color:#212121;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-5">
@@ -238,15 +323,11 @@ a{
                                 <div class="col-6">
                                     <ul class="list-unstyled">
                                         <li><a href style="color:white;">Product</a></li>
-                                        <li><a href="" style="color:white;">Benefits</a></li>
-                                        <li><a href="" style="color:white;">Partners</a></li>
                                         <li><a href="" style="color:white;">Team</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-6">
                                     <ul class="list-unstyled">
-                                        <li><a href="" style="color:white;">Documentation</a></li>
-                                        <li><a href="" style="color:white;">Support</a></li>
                                         <li><a href="" style="color:white;">Legal Terms</a></li>
                                         <li><a href="" style="color:white;" >About</a></li>
                                     </ul>
@@ -255,7 +336,7 @@ a{
                             <ul class="nav">
                                 <li class="nav-item"><a href="" class="nav-link pl-0"><i class="fa fa-facebook fa-lg" style="color:white;"></i></a></li>
                                 <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-twitter fa-lg" style="color:white;"></i></a></li>
-                                <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-github fa-lg" style="color:white;"></i></a></li>
+    
                                 <li class="nav-item"><a href="" class="nav-link" style="color:white;"><i class="fa fa-instagram fa-lg" style="color:white;"></i></a></li>
                             </ul>
                             <br>
@@ -270,6 +351,7 @@ a{
                     </div>
                 </div>
             </footer>
+            </div>
     </body>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         
