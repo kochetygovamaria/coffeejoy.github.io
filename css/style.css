@@ -17,7 +17,28 @@ justin@justinaguilar.com
 slideDown
 ==============================================
 */
+@media screen and (min-width: 300px)and (max-width: 500px) {
 
+    #logo{
+		visibility: hidden;
+	}
+	#logom{
+		width:0;
+	}
+	#info .h1{
+		visibility: hidden;
+
+	}
+}
+@media screen and (min-width: 800px) {
+
+    #logo{
+		visibility: visible;
+	}
+	#logom{
+		width:50%;
+	}
+}
 @font-face {
 	font-family: 'Galacticastle';
 	src: URL('Galacticastle-Regular.ttf') format('ttf');
