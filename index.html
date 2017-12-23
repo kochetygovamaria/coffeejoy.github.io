@@ -99,6 +99,10 @@ a{
 
         
     }
+    .hideme
+{
+    opacity:0;
+}
   
      /* box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12); */
 
@@ -116,6 +120,20 @@ a{
     $(".navbar.navbar-toggleable-md.navbar-inverse.fixed-top").css("background-color","#2c034b")
    }
 });
+
+$('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'opacity':'1'},300);
+                    
+            }
+            
+        }); 
     }
 
 
@@ -261,7 +279,7 @@ image.onload = function () {
             <!--Main Layout-->
             <main class="text-center py-5">
                 <h1   style="color:#faca56;font-family:Chela One;">Menu</h1>
-                    <div class="container"  id="menu" style="border-top:1ch solid #faca56">
+                    <div class="container hideme"  id="menu" style="border-top:1ch solid #faca56">
                             <div class="container" style="border-top:0.5ch solid #faca56; margin-top:1%;">
                             <div class="row" style="margin-top:1%;">
                               <div class="col-sm-1 col-xs-1 col-md-4 col-lg-4" style="margin-top:5%;">
@@ -284,7 +302,7 @@ image.onload = function () {
                             </div>
                           </div>
             </div>
-            <div class="container animated" id="element-to-animate" style="margin-top:10%;">
+            <div class="container hideme animated" id="element-to-animate" style="margin-top:10%;">
             <h2 style="color:#faca56;font-family:Chela One;" >About</h2>
             <div class="container" id="about" style="border-top:1ch solid #faca56">
                     <div class="container" style="border-top:0.5ch solid #faca56; margin-top:1%;">
@@ -316,7 +334,7 @@ image.onload = function () {
                   </div>
                 </div>
     </div>
-    <div class="container" style="margin-top:10%;">
+    <div class="container hideme" style="margin-top:10%;">
             <h2 style="color:#faca56; font-family:Chela One;"  >What Our Friends Say About Us</h2>
             <div class="container" style="border-top:1ch solid #faca56">
                     <div class="container" style="border-top:0.5ch solid #faca56; margin-top:1%;">
