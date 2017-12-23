@@ -18,7 +18,10 @@ slideDown
 ==============================================
 */
 
-
+@font-face {
+	font-family: 'Galacticastle';
+	src: URL('Galacticastle-Regular.ttf') format('ttf');
+  }
 .slideDown{
 	animation-name: slideDown;
 	-webkit-animation-name: slideDown;	
@@ -511,7 +514,7 @@ bigEntrance
 .bigEntrance{
 	animation-name: bigEntrance;
 	-webkit-animation-name: bigEntrance;	
-
+  animation-delay: 2s;
 	animation-duration: 1.6s;	
 	-webkit-animation-duration: 1.6s;
 
@@ -729,7 +732,7 @@ pulse
 .pulse{
 	animation-name: pulse;
 	-webkit-animation-name: pulse;	
-
+  animation-delay: 2s;
 	animation-duration: 1.5s;	
 	-webkit-animation-duration: 1.5s;
 
@@ -858,7 +861,7 @@ pullUp
 .pullUp{
 	animation-name: pullUp;
 	-webkit-animation-name: pullUp;	
-
+  animation-delay: 2s;
 	animation-duration: 1.1s;	
 	-webkit-animation-duration: 1.1s;
 
@@ -1134,8 +1137,8 @@ body {
 
 
 .registration-form {
-width:400px;
-float:right;
+
+
 }
 .registration-form header {
   position: relative;

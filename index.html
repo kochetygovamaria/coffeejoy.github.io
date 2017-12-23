@@ -21,9 +21,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,900' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
       
           <link rel="stylesheet" href="css/style.css">
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
    <style>
 button{
     position:absolute;
@@ -54,18 +62,91 @@ a{
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 300ms;
 }
+
+.col-sm-12.col-xs-12.col-md-6.col-lg-6{
+  width: 100%;
+}
+.navbar {
+    width:100%;
+    box-shadow: none; 
+    }
+
+    .navbar-toggler {
+        cursor:pointer;
+        outline:0;
+    }
+
+    .nav-link {
+        text-transform:uppercase;
+        font-weight:bold;
+    }
+
+    .nav-item {
+        padding: 0 1rem;
+    }
+        .navbar-toggler {
+        cursor:pointer;
+        outline:0;
+    }
+
+    .nav-link {
+        text-transform:uppercase;
+        font-weight:bold;
+    }
+
+    .nav-item {
+        padding: 0 1rem;
+
+        
+    }
+  
+     /* box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12); */
+
     </style>
     <script type="text/javascript">
-        $(window).load(function() {
-            setTimeout(function() {
-    $(".loader").fadeOut("slow");
-}, 2000);
+    
+    window.onscroll = function() {
+      
+            
+        $(document).scroll(function() { 
+   if($(window).scrollTop() === 0) {
+    $(".navbar.navbar-toggleable-md.navbar-inverse.fixed-top").css("background-color","transparent")
+   }
+   else{
+    $(".navbar.navbar-toggleable-md.navbar-inverse.fixed-top").css("background-color","#2c034b")
+   }
 });
+    }
+
+
         function ShowDiv() {
             document.getElementById('div1').className='m-fadeIn';
             
         }
         $(document).ready(function(){
+
+            
+
+          function getBgUrl(el) {
+    var bg = "";
+    if (el.currentStyle) { // IE
+        bg = el.currentStyle.backgroundImage;
+    } else if (document.defaultView && document.defaultView.getComputedStyle) { // Firefox
+        bg = document.defaultView.getComputedStyle(el, "").backgroundImage;
+    } else { // try and get inline style
+        bg = el.style.backgroundImage;
+    }
+    return bg.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
+}
+
+var image = document.createElement('img');
+image.src = getBgUrl(document.getElementById('home'));
+image.onload = function () {
+  $(".loader").fadeOut(3000);
+  
+    $(".div1").css("visibility","visible").fadeIn(4000);
+};
+
             // Add smooth scrolling to all links
             $("a").on('click', function(event) {
           
@@ -85,114 +166,106 @@ a{
              
                   // Add hash (#) to URL when done scrolling (default click behavior)
                   window.location.hash = hash;
+                  if(hash=="#home"){
+                     
+                      $(".navbar.navbar-toggleable-md.navbar-inverse.fixed-top").css("background-color","transparent")
+                  }
+                  else{
+                    $(".navbar.navbar-toggleable-md.navbar-inverse.fixed-top").css("background-color","#2c034b")
+                  }
                 });
               } // End if
             });
+     
+        });
+       
+
+        
                // Add smooth scrolling to all links
-         
-          });
+  
+
  
         </script>
 </head>
 
-<body onload="window.setInterval('ShowDiv()', 1000);">
+<body >
         <div class="loader"></div>
-        <div id="div1" class="m-fadeOut">
+        <div class="div1" style="visibility:hidden;">
          
-            <header >
-            
-                    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+            <header id="home2">
+              
+                    <nav class="navbar navbar-toggleable-md navbar-inverse  bg-dark fixed-top" style="background-color:none;">
                             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                               <span class="navbar-toggler-icon"></span>
                             </button>
-                            
-                      
+                            <a class="navbar-brand" href="#"><img src="CoffeeJoyLogo.png" style="width:50%; margin-left:5%;"/></a>
+                           
                             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                                  
                               <ul class="navbar-nav ml-auto ">
                                 <li class="nav-item active">
-                                  <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                                  <a class="nav-link" style="font-family: 'Raleway';color:beige;;" href="#home">Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#menu">Menu</a>
+                                  <a class="nav-link" style="font-family: 'Raleway',sans-serif;color:beige;" href="#menu">Menu</a>
                                 </li>
                                 <li class="nav-item">
-                                        <a class="nav-link" href="#about">About</a>
+                                        <a class="nav-link" style="font-family: 'Raleway';color:beige;" href="#about">About</a>
                                       </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#contact">Contact</a>
+                                  <a class="nav-link" style="font-family: 'Raleway';color:beige;" href="#contact">Contact</a>
                                 </li>
                                
                               </ul>
                              
                             </div>
                           </nav>
-                          <div id="home" style="background:url('21.jpg') no-repeat center center; 
-                          -webkit-background-size: cover;
+                        
+                          <div id="home" style="height:100vh; background: url('back1.jpg') no-repeat center center; 
+                         
                           -moz-background-size: cover;
                           -o-background-size: cover;
-                          background-size: cover;height:100vh;">
+                          background-size: cover;position:relative;" class="mustLoad">
                          
-                          <div class="container" style="border-top:0.5ch solid #faca56; margin-top:1%;">
-                            <div class="row" style="margin-top:3%;">
-                                <div class="col-sm-1 col-xs-1 col-md-6 col-lg-6">               
-                                    
-                                                                  <div style="background-color:#212121;height:80vh;width:35vw; margin-left:3%;">
-                                           
-                                                             <h2 style="padding-top:40%;color:white;text-align:center; font-family:Playfair Display;">Our Grand Opening</h2>
-                                                                                              </br>
-                                                                       <h1 style="color:white;text-align:center; font-family:Playfair Display;">&amp;</h1>
-                                                                                    </br>
-                                                                        <h2 style="color:white;text-align:center; font-family:Playfair Display;">Coffee Tasitng</h2>
-                                                                                    </br>
-                                                                        <h2 style="color:white;text-align:center; font-family:Playfair Display;">Dec 12, 2017</h2></br>
-                                                                            <h5 style="color:white;text-align:center; font-family:Playfair Display;"> 56 Beacon Street, Brookline, MA</h5>
-                                                                </div>
-                                                          </div>
-                              <div class="col-sm-1 col-xs-1 col-md-6 col-lg-6">
-                                  <div class="registration-form" style="margin-top:20%;margin-right:15%;">
-                                      <header>
-                                        <h1>Get a Free Cup of Coffee</h1>
-                                        <p>Subscribe</p>
-                                      </header>
-                                      <form>
-                                        <div class="input-section email-section">
-                                          <input class="email" type="email" placeholder="ENTER YOUR E-MAIL HERE" autocomplete="off"/>
-                                          <div class="animated-button"><span class="icon-paper-plane"><i class="fa fa-envelope-o"></i></span><span class="next-button email"><i class="fa fa-arrow-up"></i></span></div>
-                                        </div>
-                                        <div class="input-section password-section folded">
-                                          <input class="password" type="password" placeholder="ENTER YOUR PASSWORD HERE"/>
-                                          <div class="animated-button"><span class="icon-lock"><i class="fa fa-lock"></i></span><span class="next-button password"><i class="fa fa-arrow-up"></i></span></div>
-                                        </div>
-                                        <div class="input-section repeat-password-section folded">
-                                          <input class="repeat-password" type="password" placeholder="REPEAT YOUR PASSWORD HERE"/>
-                                          <div class="animated-button"><span class="icon-repeat-lock"><i class="fa fa-lock"></i></span><span class="next-button repeat-password"><i class="fa fa-paper-plane"></i></span></div>
-                                        </div>
-                                        <div class="success"> 
-                                          <p>ACCOUNT CREATED</p>
-                                        </div>
-                                      </form>
-                                    </div>
-      
-                        </div>
+                         <!--1921.jpg -->
+                         <div style="height:100vh;background: rgba(147, 119, 141, 0.5);">     </div>
                          
+                            <div  style="position:absolute;
+                            top: 30%; width:100vw;text-align:center;">
                        
-</div> 
+                          
+                           <h1  class="h1" style="text-align:center;font-family: 'Abril Fatface';
+                          
+                          color:beige;">Join Us For Our Grand Opening <br>
+                            &amp;<br>
+                             Coffee Tasting!</h1><br><br>
+                             <h5 class="h5"style="color:#2c034b">Beacon Street, Brookline, MA 00246</h5>
+                             <h5 class="h5" style="color:#2c034b">December 25, 2015</h5>
+                           
+                             <a href="#menu" class="btn btn-outlined btn-theme btn-lg" style="margin-top:5%;text-align:center;color:beige;background-color:#f2b206;">Menu</button></a> 
+                                       
+                              
+                             
+                      </div> 
+               
+                        
+                    
 </div>
+
 </DIV>
-<a href="#menu"><button class="btn btn-outlined btn-theme btn-lg" data-wow-delay="0.7s">Menu</button></a>       
+     
             </header>
             <!--Main Navigation-->
             
             <!--Main Layout-->
             <main class="text-center py-5">
-                <h1 style="color:#faca56;font-family:Chela One;">Menu</h1>
+                <h1   style="color:#faca56;font-family:Chela One;">Menu</h1>
                     <div class="container"  id="menu" style="border-top:1ch solid #faca56">
                             <div class="container" style="border-top:0.5ch solid #faca56; margin-top:1%;">
                             <div class="row" style="margin-top:1%;">
                               <div class="col-sm-1 col-xs-1 col-md-4 col-lg-4" style="margin-top:5%;">
-                                    <img src="Asset9.png" class="img-fluid" alt="Responsive image" style="width:25%;">
+                                    <img  src="Asset9.png" class="img-fluid" alt="Responsive image" style="width:25%;">
                                     <h3 style="margin-top:5%; font-family:Myriad Pro;color:#93768d;"><em>Dessert Menu</em></h3>
                                     <h4 style="margin-top:5%;font-family:Myriad Pro;color:#f2b206;">Try our special </br>pie - Sunshine</h4>
                               </div>
@@ -211,7 +284,7 @@ a{
                             </div>
                           </div>
             </div>
-            <div class="container" style="margin-top:10%;">
+            <div class="container animated" id="element-to-animate" style="margin-top:10%;">
             <h2 style="color:#faca56;font-family:Chela One;" >About</h2>
             <div class="container" id="about" style="border-top:1ch solid #faca56">
                     <div class="container" style="border-top:0.5ch solid #faca56; margin-top:1%;">
@@ -220,14 +293,14 @@ a{
                          <blockquote class="blockquote" style="margin-top:30%;font-family:Myriad Pro;color:#93768d;" ><em>A big thank you again for the cake, my little girl loved it and so did all her friends.</em>
                                <strong style="color:#f2b206;">Lorraine Van De Lubbe</strong></blockquote>   
                       </div>
-                      <div class="col-sm-1 col-xs-1 col-md-6 col-lg-6">
-                            <img src="imagID.png" class="img-fluid" alt="Responsive image" >
+                      <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+                            <img src="imagID.png" class="img-fluid" alt="Responsive image"  >
                             
                       </div>
                      
                     </div>
                     <div class="row" style="margin-top:3%;">
-                            <div class="col-sm-1 col-xs-1 col-md-6 col-lg-6">
+                            <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
                                <h4 style="color:#faca56;">We are ...</h4>
                                     <p style="font-family:Myriad Pro;color:#93768d; text-align: left;"> 
                                             We a family business since 1989.  We treat our customers as a family memebers and want to make them happy.</p> 
